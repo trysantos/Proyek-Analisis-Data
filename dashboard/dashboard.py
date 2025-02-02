@@ -7,7 +7,7 @@ sns.set(style='dark')
 
 st.header('Proyek Analsis Data :sparkles:')
 st.subheader('Diagram Customer berdasarkan City')
-orders_customers_df = pd.read_csv("all_data_orders_customers.csv", delimiter=",")
+orders_customers_df = pd.read_csv("dashboard/all_data_orders_customers.csv", delimiter=",")
 group_df = orders_customers_df.groupby(by="customer_city").order_id.nunique().sort_values(ascending=False).reset_index().head(10)
 group_df.head()
 
@@ -23,7 +23,7 @@ st.pyplot(fig)
 
 
 st.subheader('Diagram Customer berdasarkan State')
-orders_customers_df = pd.read_csv("all_data_orders_customers.csv", delimiter=",")
+orders_customers_df = pd.read_csv("dashboard/all_data_orders_customers.csv", delimiter=",")
 group_df = orders_customers_df.groupby(by="customer_state").order_id.nunique().sort_values(ascending=False).reset_index().head(10)
 group_df.head()
 
